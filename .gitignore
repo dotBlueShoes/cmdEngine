@@ -1,0 +1,24 @@
+# Environmental stuff.
+/build/
+/.vs/
+
+# Personal stuff.
+/.ninja/secret.ninja
+.obsidian
+
+# IMGUI generated
+/imgui.ini
+
+*.zip
+*.exe
+*.npp
+*.ninja_log
+
+*.editorconfig
+*.yml
+
+# It's easier ...
+#/dependencies/
+dependencies/glm/*/.gitignore
+dependencies/glm/0.9.9.8/doc/*
+dependencies/glm/0.9.9.8/test/*

@@ -1,0 +1,11 @@
+- [X] main, baseTypes & debug mode.
+- [X] play a wav sound. 
+- [ ] remove/change agnostic and platform defines, add tracy builds
+- [ ] move dr_wav into dependencies.
+- [ ] play a mp3 sound. 
+- [ ] play a ogg sound.
+- [ ] input/output handlers - make it able to stop the execution of a program with a key.
+- [ ] make it easier to compile with visual studio
+- [ ] windows console restricted and unrestricted mode colors.
+- [ ] entity, components, systems logic (base atleast).
+- [ ] render loop.
