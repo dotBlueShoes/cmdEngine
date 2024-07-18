@@ -59,15 +59,15 @@ namespace AUDIO::DEVICE {
 
 namespace AUDIO::LISTENER {
 
-    auto Create (
-        /* IN  */ ALCdevice*& audioDevice, 
-        /* OUT */ ALCcontext*& audioContext,
-        /* IN  */ const float3& position,
+	auto Create (
+		/* IN  */ ALCdevice*& audioDevice, 
+		/* OUT */ ALCcontext*& audioContext,
+		/* IN  */ const float3& position,
 		/* IN  */ const float3& velocity
-    ) {
+	) {
 		audioContext = alcCreateContext (audioDevice, /*attributelist*/ nullptr);
 
-        // Activate the context and release check.
+		// Activate the context and release check.
 		if (!alcMakeContextCurrent (audioContext)) Error ("OPENAL: Failed to make the context active.");	
 
 		const ALfloat forwardAndUpVectors[] {
@@ -85,7 +85,7 @@ namespace AUDIO::LISTENER {
 		DEBUG CheckError ("Listener: SET: ORIENTATION");
 	}
 
-    void Destory (ALCcontext*& audioContext) { 
+	void Destory (ALCcontext*& audioContext) { 
 		alcMakeContextCurrent (nullptr);				// Unreference context
 		alcDestroyContext (audioContext);				// Free it's memory
 	}
@@ -113,7 +113,7 @@ namespace AUDIO::SOUND::MONO {
 
 namespace AUDIO::SOUND {
 
-    void Destroy (ALuint& sound) {
+	void Destroy (ALuint& sound) {
 		alDeleteBuffers (1, &sound);
 		DEBUG CheckError ("Sound: DESTROY");
 	}
@@ -172,7 +172,7 @@ namespace AUDIO::SOURCE::MONO {
 
 namespace AUDIO::SOURCE {
 
-    void Destroy (ALuint& source) {
+	void Destroy (ALuint& source) {
 		alDeleteSources (1, &source);
 		DEBUG CheckError ("Source: DESTROY");
 	}
@@ -184,7 +184,7 @@ namespace AUDIO::STATE {
 
 	void Play (const ALuint& source) {
 		alSourcePlay (source);
-        DEBUG CheckError ("State: PLAY: Source could not start playing");
+		DEBUG CheckError ("State: PLAY: Source could not start playing");
 	}
 
 	void Stop (const ALuint& source) {
